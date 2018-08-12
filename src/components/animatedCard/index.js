@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { CardLayout, CardBody, CardFooter } from "./style";
+import { CardLayout, CardBody, CardFooter, TextBody } from "./style";
 
 class AnimatedCard extends React.Component {
   state = {
     expand: false,
-    cardHeight: 300
+    cardHeight: 225
   };
 
   toggelHeight = () => {
@@ -14,8 +14,8 @@ class AnimatedCard extends React.Component {
     }));
   };
 
-  expandCardHeight = (byHeight = 200) => {
-    return this.state.cardHeight + byHeight;
+  expandCardHeight = (originalHeight = 0, byHeight = 200) => {
+    return originalHeight + byHeight;
   };
 
   render() {
@@ -23,15 +23,23 @@ class AnimatedCard extends React.Component {
     return (
       <CardLayout
         height={
-          this.state.expand ? this.expandCardHeight(125) : this.state.cardHeight
+          this.state.expand
+            ? this.expandCardHeight(this.state.cardHeight, 50)
+            : this.state.cardHeight
         }
       >
         <CardBody>
           <img
+            style={{ zIndex: 1 }}
             width="100%"
-            height="100%"
             src="https://cdn-images-1.medium.com/max/1200/1*SL4sWHdjGR3vo0x5ta3xfw.jpeg"
           />
+          <TextBody
+            yShift={this.state.expand ? 0 : -120}
+            fade={this.state.expand}
+          >
+            All that goes comes back make me rich man please.
+          </TextBody>
         </CardBody>
         <CardFooter
           onClick={this.toggelHeight}
