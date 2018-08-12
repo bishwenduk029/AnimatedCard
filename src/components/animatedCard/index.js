@@ -15,7 +15,7 @@ class AnimatedCard extends React.Component {
   };
 
   expandCardHeight = (byHeight = 200) => {
-    return this.state.cardHeight + 200;
+    return this.state.cardHeight + byHeight;
   };
 
   render() {
@@ -23,7 +23,7 @@ class AnimatedCard extends React.Component {
     return (
       <CardLayout
         height={
-          this.state.expand ? this.expandCardHeight() : this.state.cardHeight
+          this.state.expand ? this.expandCardHeight(125) : this.state.cardHeight
         }
       >
         <CardBody>
