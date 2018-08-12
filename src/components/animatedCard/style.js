@@ -3,7 +3,7 @@ import styled from "react-emotion";
 export const CardLayout = styled("div")`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background: white;
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -17,13 +17,20 @@ export const CardLayout = styled("div")`
 `;
 
 export const CardBody = styled("div")`
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 85%;
 `;
 
 export const CardFooter = styled("div")`
-  height: 15%;
-  padding-top: 5%;
   transform: ${props => `rotate(${props.rotate}deg)`};
-  transition: transform 225ms 15ms ease-in;
+  transition: transform 325ms 15ms ease-out;
+`;
+
+export const TextBody = styled("p")`
+  transform: ${props => `translateY(${props.yShift}px)`};
+  color: ${props => `rgba(0, 0, 0, ${props.fade ? 1 : 0})`};
+  transition: 
+    color 300ms 50ms ease-in,
+    transform 325ms 18ms ease-in;
 `;

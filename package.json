@@ -1,7 +1,7 @@
 {
-  "name": "new",
+  "name": "animated-card",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple codesandbox to depict how easily animations are possible with CSS-in-JS.",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
