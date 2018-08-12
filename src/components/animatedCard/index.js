@@ -35,7 +35,7 @@ class AnimatedCard extends React.Component {
         </CardBody>
         <CardFooter
           onClick={this.toggelHeight}
-          rotate={this.state.expand ? 180 : 0}
+          rotate={this.state.expand ? 0 : 180}
         >
           <FoooterSvg />
         </CardFooter>
