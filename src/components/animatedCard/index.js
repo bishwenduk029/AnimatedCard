@@ -4,8 +4,7 @@ import { CardLayout, CardBody, CardFooter, TextBody } from "./style";
 
 class AnimatedCard extends React.Component {
   state = {
-    expand: false,
-    cardHeight: 225
+    expand: false
   };
 
   toggelHeight = () => {
@@ -24,21 +23,17 @@ class AnimatedCard extends React.Component {
       <CardLayout
         height={
           this.state.expand
-            ? this.expandCardHeight(this.state.cardHeight, 50)
-            : this.state.cardHeight
+            ? this.expandCardHeight(this.props.cardHeight, 50)
+            : this.props.cardHeight
         }
       >
         <CardBody>
-          <img
-            style={{ zIndex: 1 }}
-            width="100%"
-            src="https://cdn-images-1.medium.com/max/1200/1*SL4sWHdjGR3vo0x5ta3xfw.jpeg"
-          />
+          {this.props.imageContent()}
           <TextBody
             yShift={this.state.expand ? 0 : -120}
             fade={this.state.expand}
           >
-            All that goes comes back make me rich man please.
+            {this.props.textContent}
           </TextBody>
         </CardBody>
         <CardFooter
@@ -55,10 +50,20 @@ class AnimatedCard extends React.Component {
 export default AnimatedCard;
 
 AnimatedCard.propTypes = {
-  footerSvg: PropTypes.element
+  cardHeight: PropTypes.number,
+  footerSvg: PropTypes.func,
+  imageContent: PropTypes.func,
+  textContent: PropTypes.string
 };
 
 AnimatedCard.defaultProps = {
+  imageContent: props => (
+    <img
+      style={{ zIndex: 1 }}
+      width="100%"
+      src="https://cdn-images-1.medium.com/max/1200/1*SL4sWHdjGR3vo0x5ta3xfw.jpeg"
+    />
+  ),
   footerSvg: props => (
     <svg
       class="chevron"
@@ -68,5 +73,7 @@ AnimatedCard.defaultProps = {
     >
       <path d="M5 30L50 5l45 25" fill="none" stroke="#000" stroke-width="5" />
     </svg>
-  )
+  ),
+  textContent: "Almost 3 years of experience and rate myself 3.5/5",
+  cardHeight: 225
 };
