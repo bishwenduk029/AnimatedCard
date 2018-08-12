@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { CardLayout, CardBody, CardFooter, TextBody } from "./style";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { CardLayout, CardBody, CardFooter, TextBody } from './style';
 
 class AnimatedCard extends React.Component {
   state = {
@@ -74,6 +74,6 @@ AnimatedCard.defaultProps = {
       <path d="M5 30L50 5l45 25" fill="none" stroke="#000" stroke-width="5" />
     </svg>
   ),
-  textContent: "Almost 3 years of experience and rate myself 3.5/5",
+  textContent: 'Almost 3 years of experience and rate myself 3.5/5',
   cardHeight: 225
 };

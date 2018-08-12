@@ -1,6 +1,6 @@
-import styled from "react-emotion";
+import styled from 'react-emotion';
 
-export const CardLayout = styled("div")`
+export const CardLayout = styled('div')`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -16,18 +16,18 @@ export const CardLayout = styled("div")`
   width: 260px;
 `;
 
-export const CardBody = styled("div")`
+export const CardBody = styled('div')`
   display: flex;
   flex-direction: column;
   width: 100%;
 `;
 
-export const CardFooter = styled("div")`
+export const CardFooter = styled('div')`
   transform: ${props => `rotate(${props.rotate}deg)`};
   transition: transform 325ms 15ms ease-out;
 `;
 
-export const TextBody = styled("p")`
+export const TextBody = styled('p')`
   transform: ${props => `translateY(${props.yShift}px)`};
   color: ${props => `rgba(0, 0, 0, ${props.fade ? 1 : 0})`};
   transition: color 300ms 50ms ease-in, transform 325ms 18ms ease-in;
