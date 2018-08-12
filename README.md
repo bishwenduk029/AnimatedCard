@@ -1,2 +1,0 @@
-# AnimatedCard
-Created with CodeSandbox
